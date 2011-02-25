@@ -1,0 +1,20 @@
+<% form_for @marca, :html => { :multipart => true }   do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </p>
+  <p>
+    <%= f.label :link %><br />
+    <%= f.text_field :link %>
+  </p>
+  <p>
+    <%= f.label 'Foto' %><br />
+    <%= f.file_field :foto %>
+  </p>
+
+  <p>
+    <%= f.submit 'Salvar' %>
+  </p>
+<% end %>

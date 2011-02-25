@@ -1,0 +1,12 @@
+<h1>Categorias</h1>
+<div id="slider">
+    <ul id="sliderContent">
+      <% Categoria.all.each do |c|%>
+        <li class="sliderImage">
+            <%= image_tag c.foto.url(:grande), :title => c.nome %>            
+            <span class="top"><strong><%= c.nome %></strong></span>
+        </li>
+      <% end %>
+      <div class="clear sliderImage"></div>
+    </ul>
+</div>

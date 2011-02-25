@@ -1,0 +1,23 @@
+<% form_for(@banner) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </p>
+  <p>
+    <%= f.label :tipo_banner_id %><br />
+    <%= f.text_field :tipo_banner_id %>
+  </p>
+  <p>
+    Produtos: <br/>
+      <ul>      
+        <% Marca.all.each do |m|%>
+          <li><%= check_box_tag 'banner[marca_ids][]', m.id, @banner.marcas.include?(m)%> <%= m.nome%></li>
+        <% end %>
+      </ul>
+  </p>
+  <p>
+    <%= f.submit 'Salvar' %>
+  </p>
+<% end %>

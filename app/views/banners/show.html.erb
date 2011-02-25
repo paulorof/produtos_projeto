@@ -1,0 +1,25 @@
+<h1>Banners</h1>
+<h4>
+    <span>
+        <%= link_to image_tag('icons/web/editar.png',:border => 0,:title => 'Editar'), edit_banner_path(@banner)  if logged_in? %>
+        &nbsp;<%= link_to image_tag('icons/web/voltar.png',:border => 0, :title => 'Voltar'), banners_path %>
+    </span>
+</h4>
+<p>
+  <b>Nome:</b>
+  <%=h @banner.nome %>
+</p>
+
+<p>
+  <b>Tipo banner:</b>
+  <%=h @banner.tipo_banner.nome %>
+</p>
+
+<p>
+  <b>Marcas:</b>
+  <ul>
+    <% @banner.marcas.each do |m| %>
+      <li><%= m.nome %></li>
+    <% end %>
+  </ul>
+</p>

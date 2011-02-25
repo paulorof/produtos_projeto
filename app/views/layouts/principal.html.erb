@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<%= include_tiny_mce_if_needed %>
+<%= GMap.header %>
+<%= javascript_include_tag 'ym4r-gm'%>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Seu Site</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<%= stylesheet_link_tag 'default' %>
+<%= stylesheet_link_tag 'util_style' %>
+<%= stylesheet_link_tag 'thickbox' %>
+<%= stylesheet_link_tag 'pagination' %>
+
+<!-- JavaScripts-->
+<%= javascript_include_tag "jquery-1.4.3.min" %>
+<%= javascript_include_tag "s3Slider" %>
+<%= javascript_include_tag "thickbox" %>
+<script language="javascript">AC_FL_RunContent = 0;</script>
+<%= javascript_include_tag "AC_RunActiveContent" %>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#slider').s3Slider({
+            timeOut: 3000
+        });
+    });
+</script>
+
+</head>
+<body>
+<div id="menu">
+	<%= render 'menus/menu'%>
+</div>
+
+<div id="logo">
+    <div id="usuario">
+        <% if logged_in? -%>
+              Usuario: <%= link_to_current_usuario :content_method => :login %> | <%= link_to "Sair", logout_path, { :title => "Sair do Sistema" }    %>
+        <% end -%>
+    </div>
+</div>
+
+<div id="page">
+    <div id="content">
+        <div id="welcome">
+            <%= flash_message %>
+        </div>
+        <div id="welcome">
+            <%= yield %>
+    	</div>
+     </div>
+
+	<!-- end #content -->
+	
+    <div id="sidebar">
+	    <%= render 'banners/banners_exibe' %>
+    </div>
+	    <!-- end #sidebar -->
+    <div style="clear: both; height: 1px;"></div>
+</div>
+<!-- end #page -->
+<div id="footer">
+	<div class="wrapper">
+        <p align="left" class="links">
+            &copy; 2010
+        </p>
+	    <p class="legal">
+	        <a href="http://validator.w3.org/check/referer" title="This page validates as XHTML 1.0 Strict"><abbr title="eXtensible HyperText Markup Language">XHTML</abbr></a> - <a href="http://jigsaw.w3.org/css-validator/check/referer" title="This page validates as CSS"><abbr title="Cascading Style Sheets">CSS</abbr></a>
+        <br> <%= link_to image_tag('/images/cadeado.png', :border => 0, :title => 'Entrar'),  login_path %>
+        </p>
+	    
+	</div>
+</div>
+</body>
+</html>

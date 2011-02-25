@@ -1,0 +1,24 @@
+<h1>Marcas</h1>
+<h4>
+    <span>
+        <%= link_to image_tag('icons/web/editar.png',:border => 0,:title => 'Editar'),  edit_marca_path(@marca)  if logged_in? %>
+        &nbsp;<%= link_to image_tag('icons/web/voltar.png',:border => 0, :title => 'Voltar'), marcas_path %>
+    </span>
+</h4>
+<p>
+  <b>Nome:</b>
+  <%=h @marca.nome %>
+</p>
+
+<p>
+  <b>Link:</b>
+  <%=link_to @marca.link,@marca.link %>
+</p>
+
+<p>
+  <b>Foto:</b><br/>
+  Pequena: <br/>
+  <%=image_tag @marca.foto.url(:pequena), :title => @marca.nome, :border => 1 %><br/>
+  Grande: <br/>
+  <%=image_tag @marca.foto.url(:grande), :title => @marca.nome, :border => 1 %>
+</p>

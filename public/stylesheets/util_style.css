@@ -1,0 +1,123 @@
+/********************
+MENSAGENS DE ALERTA
+********************/
+
+.notice, .error, .warning, .info {
+font-weight: bold;
+margin: -10px 0 15px 0;
+padding: 5px 5px 5px 27px;
+}
+
+.notice {
+border: 1px solid #9c9;
+background: #e2f9e3 url(../images/icons/tick.png) no-repeat 5px center;
+color: #060;
+}
+
+.error {
+border: 1px solid #c68484;
+background: #fcc url(../images/icons/cross.png) no-repeat 5px center;
+color: #c00;
+}
+
+.warning {
+border: 1px solid #dd0;
+background: #ffc url(../images/icons/error.png) no-repeat 5px center;
+color: #000;
+}
+
+.info {
+border: 1px solid #82c2d4;
+background: #ebf5f8 url(../images/icons/information.png) no-repeat 5px center;
+color: #000;
+}
+
+
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#errorExplanation {
+  margin-bottom: 20px;
+  border: 1px solid #dd0;
+  background: #ffc;
+  color: #000;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 30px;
+  font-size: 12px;
+  background: #dd0 url(../images/icons/error.png) no-repeat 5px center;
+  color: #000;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  font-weight: bold;
+  font-color: red;
+  text-indent: 35px;
+  background:  url(../images/icons/cross.png) no-repeat 15px center;
+  list-style: none;
+  margin-bottom: 6px;
+}
+
+
+/********
+ Classe Ordenacao
+ * *****/
+ 
+.ordenado a {
+  text-decoration:underline;
+  background: url(../images/icons/cima.gif) no-repeat;
+  padding-left: 15px;
+}
+
+#usuario{
+    float:right;
+    text-align: right;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: #000000;
+}
+
+/* Tabela 4 usa um fundo com imagem */
+#table4
+{
+ visibility: visible;
+ width: 100%;
+ position: relative
+}
+#table4 table
+{
+ font-size: 14px;
+ font-family: Verdana, Geneva, Arial, sans-serif;
+ background-color: transparent;
+}
+#table4 td
+{
+ padding: 0 4px;
+ border-left: 1px solid #ccc;
+}
+#table4 tr
+{
+ background-image: url("../images/t4grad.png");
+ background-repeat: repeat-x;
+}
+#table4 th
+{
+ color: #393;
+ background-image: url("../images/t4hgrad.png");
+ background-repeat: repeat-x;
+ text-align: center;
+ padding-left: 5px;
+} 

@@ -1,0 +1,34 @@
+<h1>Produtos</h1>
+<h3><span><%= link_to 'Novo produto', new_produto_path  if logged_in? %></span></h3>
+<br />
+<div id="table4">
+    <table width="100%">
+      <tr align="center">
+        <th>Nome</th>
+        <th>Marca</th>
+        <th align="center">
+            <% if logged_in? %>
+                Opções
+            <% else %>
+               Opção
+            <% end %>
+        </th>
+      </tr>
+
+    <% @produtos.each do |produto| %>
+      <tr>
+        <td><%=h produto.nome %></td>
+        <td  align="center"><%=h produto.marca.nome if produto.marca_id? %></td>
+        <td  align="center">
+            <%= link_to image_tag('icons/web/visualizar.png',:border => 0, :title => 'Visualizar'), produto %>
+            <% if logged_in? %>
+                &nbsp;<%= link_to image_tag('icons/web/editar.png',:border => 0,:title => 'Editar'), edit_produto_path(produto) %>
+                &nbsp;<%= link_to image_tag('icons/web/apagar.png', :border => 0, :title => 'Apagar'), produto, :confirm => 'Confirma Exclusão do Registro?', :method => :delete %>
+            <% end %>
+        </td>
+      </tr>
+    <% end %>
+    </table>
+</div>
+
+<br />

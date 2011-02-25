@@ -1,0 +1,35 @@
+<h1>Marcas</h1>
+<h3><span><%= link_to 'Nova marca', new_marca_path  if logged_in? %></span></h3>
+<br />
+<div id="table4">
+    <table width="100%">
+      <tr align="center">
+        <th>Nome</th>
+        <th>Link</th>
+        <th>
+            <% if logged_in? %>
+               Opções
+            <% else %>
+               Opção
+            <% end %>
+        </th>
+      </tr>
+
+    <% @marcas.each do |marca| %>
+      <tr>
+        <td><%=h marca.nome %></td>
+        <td  align="center"><%=h marca.link %></td>
+        <td  align="center">
+            <%= link_to image_tag('icons/web/visualizar.png',:border => 0, :title => 'Visualizar'), marca %>
+            <% if logged_in? %>
+                &nbsp;<%= link_to image_tag('icons/web/editar.png',:border => 0,:title => 'Editar'), edit_marca_path(marca) %>
+                &nbsp;<%= link_to image_tag('icons/web/apagar.png', :border => 0, :title => 'Apagar'), marca, :confirm => 'Are you sure?', :method => :delete %>
+            <% end %>
+        </td>
+      </tr>
+    <% end %>
+    </table>
+</div>
+
+<br />
+

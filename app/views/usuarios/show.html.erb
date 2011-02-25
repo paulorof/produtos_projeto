@@ -1,0 +1,11 @@
+<h1>Dados do Usuário</h1>
+<p>
+    Nome: <%=h @usuario.name%>
+</p>
+<p>
+    Email: <%=h @usuario.email%>
+</p>
+<p>
+    Usuario: <%=h @usuario.login%>
+</p>
+<p> <%= link_to 'Editar Usuário', edit_usuario_path(@usuario.id)%>

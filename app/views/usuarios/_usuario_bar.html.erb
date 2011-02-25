@@ -1,0 +1,9 @@
+<% if logged_in? -%>
+  <div id="usuario-bar-greeting">Logado como <%= link_to_current_usuario :content_method => :login %></div>
+  <div id="usuario-bar-action"  >(<%= link_to "Sair", logout_path, { :title => "Sair" }    %>)</div>
+<% else -%>
+  <div id="usuario-bar-greeting"><%= link_to_login_with_IP 'Não está logado', :style => 'border: none;' %></div>
+  <div id="usuario-bar-action"  ><%= link_to "Entrar",  login_path,  { :title => "Entrar" } %> /
+                               <%#= link_to "Sign up", signup_path, { :title => "Create an account" } %>
+                               </div>
+<% end -%>

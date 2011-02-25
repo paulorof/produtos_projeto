@@ -1,0 +1,12 @@
+<h1>Mapa</h1>
+<p>
+  <b><%=h @mapa.nome %></b>
+</p>
+
+<p>
+    <b>Endereço:</b>
+    <%= h @mapa.endereco %>
+</p>
+
+<%= @map.to_html %>
+<%= @map.div(:width => 450, :height => 500)%>

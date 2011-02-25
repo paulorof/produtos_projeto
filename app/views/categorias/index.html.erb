@@ -1,0 +1,34 @@
+<h1>Categorias</h1>
+<h3><span><%= link_to 'Nova categoria', new_categoria_path  if logged_in? %></span></h3>
+<br />
+<div id="table4">
+    <table width="100%">
+      <tr align="center">
+        <th>Nome</th>
+        <th>
+            <% if logged_in? %>
+               Opções
+            <% else %>
+               Opção
+            <% end %>
+        </th>
+      </tr>
+
+    <% @categorias.each do |categoria| %>
+      <tr>
+        <td><%=h categoria.nome %></td>
+        <td align="center">
+            <%= link_to image_tag('icons/web/visualizar.png',:border => 0, :title => 'Visualizar'), categoria %>
+            <% if logged_in? %>
+                &nbsp;<%= link_to image_tag('icons/web/editar.png',:border => 0,:title => 'Editar'), edit_categoria_path(categoria) %>
+                &nbsp;<%= link_to image_tag('icons/web/apagar.png', :border => 0, :title => 'Apagar'), categoria, :confirm => 'Are you sure?', :method => :delete %>
+            <% end %>
+        </td>
+                
+      </tr>
+    <% end %>
+    </table>
+</div>
+
+<br />
+

@@ -1,0 +1,23 @@
+<h1>Categoria</h1>
+<h4>
+    <span>
+        <%= link_to image_tag('icons/web/editar.png',:border => 0,:title => 'Editar'), edit_categoria_path(@categoria)  if logged_in? %>
+        &nbsp;<%= link_to image_tag('icons/web/voltar.png',:border => 0, :title => 'Voltar'), categorias_path %>
+    </span>
+</h4>
+<br />
+<p>
+  <b>Nome:</b>
+  <%=h @categoria.nome %>
+</p>
+
+<p>
+  <b>Descrição:</b>
+  <%=h @categoria.descricao %>
+</p>
+
+
+<p>
+  <b>Foto:</b>
+  <%=image_tag @categoria.foto.url(:grande),:title => @categoria.nome, :border => 1 %>
+</p>

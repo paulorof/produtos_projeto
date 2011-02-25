@@ -1,0 +1,11 @@
+<h1>Tipo Banner</h1>
+<h4>
+    <span>
+        <%= link_to image_tag('icons/web/editar.png',:border => 0,:title => 'Editar'), edit_tipo_banner_path(@tipo_banner)  if logged_in? %>
+        &nbsp;<%= link_to image_tag('icons/web/voltar.png',:border => 0, :title => 'Voltar'), tipo_banners_path %>
+    </span>
+</h4>
+<p>
+  <b>Nome:</b>
+  <%=h @tipo_banner.nome %>
+</p>

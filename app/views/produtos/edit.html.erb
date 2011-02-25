@@ -1,0 +1,9 @@
+<h1>Editar Produto</h1>
+<h4>
+    <span>
+        <%= link_to image_tag('icons/web/visualizar.png',:border => 0, :title => 'Visualizar'), @produto %>
+        &nbsp;<%= link_to image_tag('icons/web/voltar.png',:border => 0, :title => 'Voltar'), produtos_path %>
+    </span>
+</h4>
+
+<%= render 'formulario' %>

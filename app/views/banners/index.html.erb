@@ -1,0 +1,28 @@
+<h1>Banners</h1>
+<h3><span><%= link_to 'Novo banner', new_banner_path  if logged_in? %></span></h3>
+<br />
+<div id="table4">
+    <table width="100%">
+      <tr align="center">
+        <th>Nome</th>
+        <th>Tipo</th>
+        <th>Tipo banner</th>
+      </tr>
+
+    <% @banners.each do |banner| %>
+      <tr align="center">
+        <td><%=h banner.nome %></td>
+        <td><%=h banner.tipo_banner.nome %></td>
+        <td>
+            <%= link_to image_tag('icons/web/visualizar.png',:border => 0, :title => 'Visualizar'), banner %>
+            <% if logged_in? %>
+                &nbsp;<%= link_to image_tag('icons/web/editar.png',:border => 0,:title => 'Editar'), edit_banner_path(banner) %>
+                &nbsp;<%= link_to image_tag('icons/web/apagar.png', :border => 0, :title => 'Apagar'), banner, :confirm => 'Are you sure?', :method => :delete %>
+            <% end %>
+        </td>
+      </tr>
+    <% end %>
+    </table>
+</div>
+
+<br />

@@ -1,0 +1,18 @@
+<p>
+    <strong>Sejam bem vindos!</strong> 
+</p>
+
+<% unless Categoria.all.size.eql?0 %>
+    <h1>Categorias</h1>
+    <div id="slider">
+        <ol id="sliderContent">
+          <% Categoria.all.each do |c|%>
+            <li class="sliderImage">
+                <%= link_to image_tag(c.foto.url(:grande), :title => c.nome), :controller => 'produtos', :action => 'index', :cat => c.id %>            
+                <span class="top"><strong><%= c.nome %></strong></span>
+            </li>
+          <% end %>
+          <div class="clear sliderImage"></div>
+        </ul>
+    </div>
+<% end %>
